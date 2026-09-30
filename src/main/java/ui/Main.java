@@ -2,6 +2,7 @@ package ui;
 
 import dao.model.MedRecord;
 import dao.model.Patient;
+import domain.model.PatientDTO;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import java.util.Scanner;
@@ -58,21 +59,20 @@ public class Main {
 
                     case 2:
                         System.out.println("Add Patient");
-                        Patient patient= new Patient();
-                        patientui.addPatient(patient);
+                        PatientDTO patientDTO= new PatientDTO();
+                        patientui.addPatient(patientDTO);
                         break;
 
                     case 3:
                         System.out.println("Update Patient");
-                        Patient patient2= new Patient();
-                        patientui.updatePatient(patient2);
-
+                        PatientDTO patientDTO2= new PatientDTO();
+                        patientui.updatePatient(patientDTO2);
                         break;
 
                     case 4:
                         System.out.println("Delete Patient");
 
-                        Patient patient3= new Patient();
+                        PatientDTO patientDTO3= new PatientDTO();
                         id = rand.nextInt();
                         patientui.deletePatient(id);
                         id = 0;
@@ -85,14 +85,14 @@ public class Main {
 
                     case 6:
                         System.out.println("Get all MedRecords by patient");
-                        patient = new Patient();
-                        medRecordUI.getMedRecordByPatient(patient);
+                        PatientDTO patientDTO4 = new PatientDTO();
+                        medRecordUI.getMedRecordByPatient(patientDTO4);
                         break;
 
                     case 7:
                         System.out.println("Add MedRecord");
-                        patient = new Patient();
-                        medRecordUI.addMedRecord(patient);
+                        PatientDTO patientDTO5 = new PatientDTO();
+                        medRecordUI.addMedRecord(patientDTO);
                         break;
 
                     case 8:

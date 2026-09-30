@@ -11,9 +11,9 @@ public class PatientDTOMapper {
 
     }
 
-    public PatientDTO entityToDto(Patient patient1) {
-        return new PatientDTO(patient1.getId(),patient1.getName(),
-                patient1.getBirthDate(),patient1.getPhone(),0,null,null);
+    public PatientDTO entityToDto(Patient patientdto) {
+        return new PatientDTO(patientdto.getId(), patientdto.getName(),
+                patientdto.getBirthDate(), patientdto.getPhone(),0,null,null);
     }
 
 }

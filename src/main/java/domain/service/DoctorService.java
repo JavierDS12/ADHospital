@@ -3,6 +3,7 @@ package domain.service;
 import dao.model.Doctor;
 import dao.repositories.JDBCDoctorRepository;
 import domain.mappers.DoctorDTOMapper;
+import domain.model.DoctorDTO;
 import jakarta.inject.Inject;
 
 import java.util.List;
@@ -17,7 +18,11 @@ public class DoctorService {
         this.doctorDTOMapper = doctorDTOMapper;
     }
 
-    public List<Doctor> getAllDoctors() {
-        return JDBCDoctorRepository.getAllDoctors();
+    public List<DoctorDTO> getAllDoctors() {
+        List<DoctorDTO> doctorDTOList = List.of();
+        for (int i = 0; i < getAllDoctors().size(); i++) {
+            doctorDTOList.add(doctorDTOMapper.entityToDTO(JDBCDoctorRepository.getAllDoctors().get(i)));
+        }
+        return doctorDTOList;
     }
 }

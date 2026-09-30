@@ -19,12 +19,12 @@ public class PatientUI {
         return patientService.getPatients();
     }
 
-    public int addPatient(Patient patient){
-        return patientService.addPatient(patient);
+    public int addPatient(PatientDTO patientDTO){
+        return patientService.addPatient(patientDTO);
     }
 
-    public void updatePatient(Patient patient){
-        patientService.updatePatient(patient);
+    public void updatePatient(PatientDTO patientDTO){
+        patientService.updatePatient(patientDTO);
     }
 
     public void deletePatient(int id){

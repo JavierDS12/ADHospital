@@ -1,10 +1,12 @@
 package domain.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
+@NoArgsConstructor
 public class PatientDTO {
 
     private int id;

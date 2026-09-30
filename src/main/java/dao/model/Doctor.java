@@ -9,4 +9,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Doctor {
+    private int id;
+    private String name;
+    private String specialization;
+    private String phone;
 }

@@ -3,7 +3,6 @@ package domain.service;
 import dao.model.Patient;
 import dao.repositories.JDBCPatientRepository;
 import domain.mappers.PatientDTOMapper;
-import domain.model.CredentialDTO;
 import domain.model.PatientDTO;
 import jakarta.inject.Inject;
 
@@ -20,21 +19,20 @@ public class PatientService {
     }
     public List<PatientDTO> getPatients(){
         List<Patient> patients = JDBCpatientRepository.getAll();
-        List<PatientDTO> patientDTOs = List.of();
+        List<PatientDTO> listPatientDTOs = List.of();
         for (int i = 0; i < patients.size(); i++) {
-            patientDTOs.add(patientDTOMapper.entityToDto(patients.get(i)));
+            listPatientDTOs.add(patientDTOMapper.entityToDto(patients.get(i)));
         }
-        return patientDTOs;
+        return listPatientDTOs;
     }
 
-    public int addPatient(Patient patient){
-
-        JDBCpatientRepository.add(patient);
+    public int addPatient(PatientDTO patientDTO){
+        JDBCpatientRepository.add(patientDTOMapper.dtoToEntity(patientDTO));
         return 0;
     }
 
-    public void updatePatient(Patient patient){
-        JDBCpatientRepository.update(patient);
+    public void updatePatient(PatientDTO patientDTO){
+        JDBCpatientRepository.update(patientDTOMapper.dtoToEntity(patientDTO));
     }
 
     public void deletePatient(int id ){

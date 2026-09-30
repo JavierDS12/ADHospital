@@ -1,6 +1,7 @@
 package ui;
 
 import dao.model.Doctor;
+import domain.model.DoctorDTO;
 import domain.model.PatientDTO;
 import domain.service.DoctorService;
 import domain.service.PatientService;
@@ -16,7 +17,7 @@ public class DoctorUI {
         this.doctorService = doctorService;
     }
 
-    public List<Doctor> getAllDoctors(){
+    public List<DoctorDTO> getAllDoctors(){
         return doctorService.getAllDoctors();
     }
 }
